@@ -1,0 +1,15 @@
+so I think the easiest way would be to seperate the backend into distinct
+modules, with perhaps a shared module for shared functions. An example of a
+module might be submitanswer.php which would submit a particular answer.
+In this case, many of the modules would be parts of the controller, but
+sometimes the view as well.
+
+This might not fit into ishie's shit, so we may need to bundle the various
+controller functions together and separate the view functions. It is less
+natural to write php this way, but it isn' much harder.
+
+php5 supports OOP very well, almost to the extent of java.
+
+If you are unfamiliar with php, please do not fear. It is very easy to learn.
+
+php.net is a very thorough documentation website for php.
