@@ -1,0 +1,1 @@
+Definitely just copy pasted the registration/login page from a tutorial online. Can play around with the styling to make it more "Siqoia-ish"
