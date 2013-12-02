@@ -1,0 +1,25 @@
+header {
+	display:block;
+	text-align: center;
+}
+
+#wrapper{
+	display: block;
+	border: 1px solid red;
+}
+
+#login{
+	display : block;
+	border: 1px solid red;
+}
+
+#register{
+	border: 1px solid blue;
+	display:block;
+}
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script src="js/login.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/login.css" type="text/css" />
+	<title> SiQuoia Login </title>
+</head>
+
+<body>
+
+<header>
+	<h1>SiQuoia Login/Registration</h1>
+</header>
+
+<div id="wrapper">
+
+	<div id="login">
+		<form>
+			<h2>Login</h2>
+			<p>
+				<label for="username" >Your Username:</label></br>
+				<input type="text" placeholder="Your username here" id="username" name="username" required="required">
+			</p>
+			<p>
+				<label for="password"> Password:</label></br>
+				<input type="password" placeholder="Your password here" id="password" name="password" required="required">
+			</p>
+			<p>
+				<input type="submit" value="Log me in!">
+			</p>
+			<p>
+				Not a member? <a href="#" id="toRegister">Register Here</a>
+			</p>
+		</form>
+	</div>
+	
+	<div id="register" style="display:none">
+		<form>
+			<h2>Register</h2>
+			<p><label for="registeruser">Create a username</label></br>
+			<input type="text" id="registeruser" name="registeruser" required="required" placeholder="exampleUser123"></p>
+			<p> <label for="registerpass">Create password</label></br>
+			<input type="password" id="registerpass" name="registerpass" required="required" placeholder="ex: myPassword321!"></p>
+			<p><label for="confirmpass">Confirm your password</label><br>
+			<input type="password" id="confirmpass" name="confirmpass" required="required"></p>
+			<p>Already a member? <a href="#" id="toLogin">Login Here</a></p>
+		</form>
+	</div>
+	
+</div>
+
+	
+	
+</body>
+</html>
