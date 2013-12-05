@@ -1,0 +1,36 @@
+html{
+	min-height:100%;
+	position:relative
+}
+
+header{
+	display:block;
+	text-align:center;
+}
+
+#wrapper{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	width:500px;
+	border:1px solid red;
+}
+
+#splash{
+	font-size:250%;
+	background-color:blue;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align: center;
+	
+}
+
+#splashText{
+	position:absolute;
+	top:50%;
+	left: 40%;
+}
+

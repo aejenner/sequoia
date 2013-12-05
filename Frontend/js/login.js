@@ -15,6 +15,7 @@ $(document).ready(function(){
 		//$('#login').css({'display':'block'});
 	});
 	
+	//more "user friendly" way to confirm password... hit a button to show it
 	$(".showpassword").each(function (index, input) {
     var $input = $(input);
     $("button").click(function () {
