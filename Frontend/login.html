@@ -19,7 +19,7 @@
 <div id="wrapper">
 
 	<div id="login">
-		<form>
+		<form action="#">
 			<h2>Login</h2>
 			<p>
 				<label for="username" >Your Username:</label></br>
@@ -39,14 +39,14 @@
 	</div>
 	
 	<div id="register" style="display:none">
-		<form>
+		<form action="#">
 			<h2>Register</h2>
 			<p><label for="registeruser">Create a username</label></br>
 			<input type="text" id="registeruser" name="registeruser" required="required" placeholder="exampleUser123"></p>
 			<p> <label for="registerpass">Create password</label></br>
-			<input type="password" id="registerpass" name="registerpass" required="required" placeholder="ex: myPassword321!"></p>
-			<p><label for="confirmpass">Confirm your password</label><br>
-			<input type="password" id="confirmpass" name="confirmpass" required="required"></p>
+			<input type="password" id="registerpass" name="registerpass" required="required" class="showpassword" placeholder="ex: myPassword321!"> <button id="pwText" onclick="return false;">Show Password</button>
+			<p/>
+			<input type="submit" value="Sign me up!" id="regButton">
 			<p>Already a member? <a href="#" id="toLogin">Login Here</a></p>
 		</form>
 	</div>
