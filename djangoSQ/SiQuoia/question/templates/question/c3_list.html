@@ -1,0 +1,12 @@
+{% with  c1=c2.category %}
+
+<h1>{{ c2.name }}</h1>
+
+<ul>
+	<li>All</li>
+	{% for c3 in c2.category3_set.all %}
+		<li><a href="{% url 'question:question_list' c1.id c2.id c3.id %}">{{c3.name}}</a></li>
+	{% endfor %}
+</ul>
+<a href="{% url 'question:c2_list' c1.id %}">Back</a>
+{% endwith %}

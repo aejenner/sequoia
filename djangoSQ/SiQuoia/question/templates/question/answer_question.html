@@ -1,0 +1,17 @@
+{% with c3=q.category %}
+{% with c2=c3.category %}
+{% with c1=c2.category %}
+
+<h1>{{ q.text }}</h1>
+
+<form action="{% url 'question:submit' c1.id c2.id c3.id q.id %}" method="post">
+{% csrf_token %}
+{% for choice in q.choice_set.all %}
+	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	<label for="choice{{ forloop.counter }}">{{ choice.text }}</label><br />
+{% endfor %}
+<input type="submit" value="Submit" />
+</form>
+{% endwith %}
+{% endwith %}
+{% endwith %}

@@ -1,0 +1,13 @@
+<h1>Category</h1>
+
+{% if c1_list %}
+<ul>
+	<li>All</li>
+	{% for c1 in c1_list %}
+		<li><a href="{% url 'question:c2_list' c1.id %}">{{ c1.name }}</a></li>
+	{% endfor %}
+</ul>
+
+{% else %}
+	<p>No category</p>
+{% endif %}
