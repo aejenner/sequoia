@@ -41,9 +41,11 @@ class Question(models.Model):
 	# number of times answered by all users
 	def num_answered(self):
 		return self.num_marked_right + self.num_marked_wrong
+	num_answered.integer = True
 	# easiness of the question
 	def easiness(self):
 		return self.num_marked_right - self.num_marked_wrong;
+	easiness.integer = True
 	# the "toString" method
 	def __unicode__(self):
 		return self.text

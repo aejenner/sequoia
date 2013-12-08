@@ -11,4 +11,4 @@ class QRanking(generic.ListView):
 	context_object_name = 'q_list'
 
 	def get_queryset(self):
-		return Question.objects.order_by('easiness')[:50]
+		return Question.objects.order_by('-num_marked_right')[:50]

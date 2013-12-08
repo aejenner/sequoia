@@ -1,8 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <title>SiQuoia</title>
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="path/to/stylesheet" /> -->
+</head>
+<body>
 <h1>Top Easiest Questions</h1>
 
 {% if q_list %}
 
-<table>
+<table border='1'>
 	<tr>
 		<th>Question</th>
 		<th>Attempted</th>
@@ -13,7 +21,7 @@
 	<tr>
 		<td>{{ q.text }}</td>
 		<td>{{ q.num_answered }}</td>
-		<td>{{ q.num_marked_correct }}</td>
+		<td>{{ q.num_marked_right }}</td>
 		<td>{{ q.num_marked_wrong }}</td>
 	</tr>
 	{% endfor %}
@@ -22,3 +30,5 @@
 {% else %}
 	<p>No Questions</p>
 {% endif %}
+</body>
+</html>
