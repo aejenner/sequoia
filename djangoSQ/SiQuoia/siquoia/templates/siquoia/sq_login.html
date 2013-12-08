@@ -1,0 +1,13 @@
+<h1>SiQuoia Login</h1>
+
+{% if error_message %}<p><strong>{{error_message}}</p></strong>{% endif %}
+
+<form method="POST" action="{% url 'sq_auth' %}">
+{% csrf_token %}
+  <label for="username_field">Username:</label>
+  <input type="text" name="username" id="username_field" /><br />
+  <label for="password_field">Password:</label> 
+  <input type="password" name="password" id="password_field" /><br />
+  
+  <input type="submit" value="Login" />
+</form>

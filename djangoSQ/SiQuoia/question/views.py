@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
 
+
 from question.models import Question, Category1, Category2, Category3, Choice
 
 # shows the top level category
