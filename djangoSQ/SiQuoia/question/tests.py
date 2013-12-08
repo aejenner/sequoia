@@ -24,6 +24,14 @@ class easeTester(TestCase):
     e2 = q.easiness();
     self.assertGreater(e, e2);
 
+class easeTester2(TestCase):
+  def test_easiness2(self):
+    q = Question(text="text", num_marked_right=523, num_marked_wrong=525)
+    e = q.easiness();
+    q.num_marked_right += 30;
+    e2 = q.easiness();
+    self.assertGreater(e2, e);
+
 class SimpleTest(TestCase):
     def test_basic_addition(self):
         """
