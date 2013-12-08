@@ -39,7 +39,7 @@ class Question(models.Model):
 	# number of times answered wrong by all users
 	num_marked_wrong = models.IntegerField(default=0)
 	# number of times answered by all users
-	def num_answerd(self):
+	def num_answered(self):
 		return self.num_marked_right + self.num_marked_wrong
 	# easiness of the question
 	def easiness(self):
