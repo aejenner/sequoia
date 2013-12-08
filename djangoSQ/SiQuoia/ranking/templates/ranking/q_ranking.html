@@ -1,0 +1,24 @@
+<h1>Top Easiest Questions</h1>
+
+{% if q_list %}
+
+<table>
+	<tr>
+		<th>Question</th>
+		<th>Attempted</th>
+		<th>Marked Correct</th>
+		<th>Marked Wrong</th>
+	</tr>
+	{% for q in q_list %}
+	<tr>
+		<td>{{ q.text }}</td>
+		<td>{{ q.num_answered }}</td>
+		<td>{{ q.num_marked_correct }}</td>
+		<td>{{ q.num_marked_wrong }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% else %}
+	<p>No Questions</p>
+{% endif %}

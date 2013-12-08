@@ -1,1 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>SiQuoia</title>
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="path/to/stylesheet" /> -->
+</head>
+<body>
+
 <h1>SiQuoia Register</h1>
+
+{% if error_message %}<p><strong>{{error_message}}</p></strong>{% endif %}
+
+<form method="POST" action="{% url 'squser:sq_register_submit' %}">
+{% csrf_token %}
+  <label for="username_field">Username:</label>
+  <input type="text" name="username" id="username_field" /><br />
+  <label for="password_field">Password:</label> 
+  <input type="password" name="password" id="password_field" /><br />
+  <label for="password_field_cnf">Password (confirm):</label> 
+  <input type="password" name="password_cnf" id="password_field_cnf" /><br />
+
+  <input type="submit" value="Register" />
+</form>
+
+</body>
+</html>
