@@ -17,6 +17,6 @@ class QRanking(generic.ListView):
                   return q2.easiness() - q1.easiness()
 
                 alist.sort(listCmp);
-                return alist;
+                return alist[:100];
 
 		#return Question.objects.order_by('-num_marked_right')[:50]
