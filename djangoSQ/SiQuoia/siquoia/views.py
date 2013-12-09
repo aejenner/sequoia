@@ -1,6 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
+from django.core.context_processors import csrf
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 
@@ -21,12 +22,14 @@ def sq_logout(request):
 	return HttpResponseRedirect('/')
 
 def sq_register(request):
+	args = {}
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/accounts/register_success')
-
-	aegs = {}
+			return HttpResponseRedirect(reverse('sq_register_success'))
+		else:
+			args['error_message'] = '*The combination of information you provided can not be used.'
+	args.update(csrf(request))
 	args['form'] = UserCreationForm()
-	return render_to_response('sq_register.html', args)
+	return render_to_response('siquoia/sq_register.html', args)

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <title>SiQuoia</title>
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="path/to/stylesheet" /> -->
+</head>
+<body>
+
+<h1>SiQuoia Register</h1>
+
+{% if error_message %}<p><strong>{{error_message}}</p></strong>{% endif %}
+
+<form method="POST" action="{% url 'sq_register' %}">
+{% csrf_token %}
+{{ form }}
+
+  <input type="submit" value="Register" />
+</form>
+
+</body>
+</html>
