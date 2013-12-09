@@ -1,14 +1,7 @@
-<!doctype html>
-<html>
-<head>
-  <title>SiQuoia</title>
-  <meta charset="utf-8">
+{% extends "siquoia/base.html" %}
 
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'ranking/sq_ranking.css' %}" />
+{% block content %}
 
-</head>
-<body>
 <h1>Top Easiest Questions</h1>
 
 {% if q_list %}
@@ -33,5 +26,6 @@
 {% else %}
 	<p>No Questions</p>
 {% endif %}
-</body>
-</html>
+
+{% endblock %}
+
