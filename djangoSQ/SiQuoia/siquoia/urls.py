@@ -17,4 +17,6 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', TemplateView.as_view(template_name="siquoia/sq_login.html"), name="sq_login"),
     url(r'^accounts/auth/$', views.sq_auth, name='sq_auth'),
     url(r'^accounts/logout/$', views.sq_logout, name='sq_logout'),
+    url(r'^accounts/register/$', views.sq_register, name='sq_register'),
+
 )
