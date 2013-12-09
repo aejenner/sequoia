@@ -1,4 +1,9 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
 {% with  c1=c2.category %}
+<h1>{{ c1.name }}</h1>
 
 <h1>{{ c2.name }}</h1>
 
@@ -10,3 +15,6 @@
 </ul>
 <a href="{% url 'question:c2_list' c1.id %}">Back</a>
 {% endwith %}
+
+{% endblock %}
+

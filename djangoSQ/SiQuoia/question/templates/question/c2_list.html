@@ -1,3 +1,7 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
 <h1>{{ c1.name }}</h1>
 
 <ul>
@@ -7,3 +11,6 @@
 	{% endfor %}
 </ul>
 <a href="{% url 'question:c1_list' %}">Back</a>
+
+{% endblock %}
+
