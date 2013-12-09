@@ -10,7 +10,8 @@
 <h1>{{ q.text }}</h1>
 <h2><a href="{% url 'question:c2_list' c1.id %}">{{ c1.name }}</a></h2>
 <h2><a href="{% url 'question:c3_list' c1.id c2.id %}">{{ c2.name }}</a></h2>
-<h2><a href=".">{{ c3.name }}</a></h2>
+<h2><a href="{% url 'question:question_list' c1.id c2.id c3.id %}">{{ c3.name }}</a></h2>
+<h2><a href=".">{{ q.text }}</a></h2>
 
 <form action="{% url 'question:submit' c1.id c2.id c3.id q.id %}" method="post">
 {% csrf_token %}
