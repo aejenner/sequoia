@@ -6,6 +6,9 @@
 {% with c1=c2.category %}
 
 <h1>{{ c3.name }}</h1>
+<h2>{{ c1.name }}</h2>
+<h2>{{ c2.name }}</h2>
+<h2>{{ c3.name }}</h2>
 
 <ul>
 	{% for question in c3.question_set.all %}

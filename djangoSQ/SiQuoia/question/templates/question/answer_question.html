@@ -7,6 +7,9 @@
 {% with c1=c2.category %}
 
 <h1>{{ q.text }}</h1>
+<h2>{{ c1.name }}</h2>
+<h2>{{ c2.name }}</h2>
+<h2>{{ c3.name }}</h2>
 
 <form action="{% url 'question:submit' c1.id c2.id c3.id q.id %}" method="post">
 {% csrf_token %}
