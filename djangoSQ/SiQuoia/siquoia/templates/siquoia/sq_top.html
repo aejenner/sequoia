@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <title>SiQuoia</title>
-  <meta charset="utf-8">
-{% load staticfiles %}
-  <link rel="stylesheet" type="text/css" href="{% static 'siquoia/style.css' %}" />
-</head>
-<body>
+{% extends "siquoia/base.html" %}
+
+{% block content %}
 
 <h1>SiQuoia Top Page</h1>
 
@@ -15,6 +9,4 @@
 	<li><a href="{% url 'sq_register' %}">Register</a></li>
 </ul>
 
-</body>
-</html>
-
+{% endblock %}
