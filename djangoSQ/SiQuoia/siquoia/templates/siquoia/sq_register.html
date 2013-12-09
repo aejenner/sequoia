@@ -11,11 +11,23 @@
 
 {% if error_message %}<p><strong>{{error_message}}</p></strong>{% endif %}
 
-<form method="POST" action="{% url 'sq_register' %}">
-{% csrf_token %}
-{{ form }}
+<form method="POST" action="/accounts/register/">
+	{% csrf_token %}
+	<label for="id_username">Username:</label>
+	<input id="id_username" maxlength="30" name="username" type="text" />
+	<br />
 
-  <input type="submit" value="Register" />
+	<label for="id_password1">Password:</label>
+	<input id="id_password1" name="password1" type="password" />
+	<br />
+
+	<label for="id_password2">Password confirmation:</label>
+	<input id="id_password2" name="password2" type="password" />
+	<br />
+	<span class="helptext">30 characters or fewer. Letters, digits and [ @ . + - _ ] only.</span>
+	<br />
+
+<input type="submit" value="Register" />
 </form>
 
 </body>

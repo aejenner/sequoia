@@ -31,5 +31,4 @@ def sq_register(request):
 		else:
 			args['error_message'] = '*The combination of information you provided can not be used.'
 	args.update(csrf(request))
-	args['form'] = UserCreationForm()
 	return render_to_response('siquoia/sq_register.html', args)
