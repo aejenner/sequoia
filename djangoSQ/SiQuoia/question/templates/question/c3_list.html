@@ -5,8 +5,8 @@
 {% with  c1=c2.category %}
 
 <h1>{{ c2.name }}</h1>
-<h2>{{ c1.name }}</h2>
-<h2>{{ c2.name }}</h2>
+<h2><a href="{% url 'question:c2_list' c1.id %}">{{ c1.name }}</a></h2>
+<h2><a href="{% url 'question:c3_list' c1.id c2.id %}">{{ c2.name }}</a></h2>
 
 <ul>
 	<li>All</li>
