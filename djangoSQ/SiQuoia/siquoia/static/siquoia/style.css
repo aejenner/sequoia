@@ -46,6 +46,7 @@ input {
   border: 3px double #333333;
   border-radius: 5px;
   font-size: large;
+  margin: 4px;
 }
 
 input[type="text"], input[type="password"]{
@@ -72,4 +73,8 @@ td, th {
 
 td {
   text-align: right;
+}
+
+label {
+  display: block;
 }
