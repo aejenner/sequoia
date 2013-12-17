@@ -1,18 +1,15 @@
-<!doctype html>
-<html>
-<head>
-  <title>SiQuoia</title>
-  <meta charset="utf-8">
-  <!-- <link rel="stylesheet" type="text/css" href="path/to/stylesheet" /> -->
-</head>
-<body>
+{% extends "siquoia/base.html" %}
 
-<h1>SiQuoia Top Page</h1>
+{% block content %}
+
+<h1>User Top</h1>
 
 <ul>
-	<li><a href="{% url 'sq_login' %}">Login</a></li>
-	<li><a href="{% url 'squser:sq_register' %}">Register</a></li>
+	<li><a href="{% url 'squser:sq_start' %}">Play Quiz</a></li>
+	<li><a href="{% url 'ranking:q_ranking' %}">Buy SiQuoias</a></li>
+	<li><a href="{% url 'squser:c1_list' %}">Get Packet</a></li>
+	<li><a href="{% url 'ranking:q_ranking' %}">Ranking</a></li>
 </ul>
 
-<body>
-</html>
+
+{% endblock %}

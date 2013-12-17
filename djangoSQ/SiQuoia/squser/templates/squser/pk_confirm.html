@@ -1,0 +1,19 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
+<h1>Confirmantion</h1>
+
+<ul>
+	<li>Category: {{cName}}</li>
+	<li>Price: 20 SQ</li>
+</ul>
+
+<form method="POST" action="{% url 'squser:pk_get' %}">
+{% csrf_token %}
+  <input type='hidden' name='cType' value='{{cType}}' />
+  <input type='hidden' name='pk' value='{{pk}}' />
+  <input type="submit" value="Get Packet!" />
+</form>
+
+{% endblock %}

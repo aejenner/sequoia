@@ -1,0 +1,18 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
+<h1>{{ c1.name }}</h1>
+<h2><a href="{% url 'squser:c1_list' %}">Category</a></h2>
+<h2><a href="{% url 'squser:c2_list' c1.id %}">{{ c1.name }}</a></h2>
+
+<ul>
+	<li><a href="{% url 'squser:pk_confirm' c1.id %}">All</a></li>
+	{% for c2 in c1.category2_set.all %}
+		<li><a href="{% url 'squser:c3_list' c1.id c2.id %}">{{c2.name}}</a></li>
+	{% endfor %}
+</ul>
+<a href="{% url 'squser:c1_list' %}">Back</a>
+
+{% endblock %}
+

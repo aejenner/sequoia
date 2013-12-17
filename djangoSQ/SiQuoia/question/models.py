@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # model for the top most category 
 class Category1(models.Model):
 	# the category name
