@@ -1,3 +1,4 @@
+from django.template import RequestContext
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
@@ -30,5 +31,5 @@ def sq_register(request):
 			return HttpResponseRedirect(reverse('sq_register_success'))
 		else:
 			args['error_message'] = '*The combination of information you provided can not be used.'
-	args.update(csrf(request))
-	return render_to_response('siquoia/sq_register.html', args)
+	
+	return render_to_response('siquoia/sq_register.html', args, context_instance=RequestContext(request))

@@ -9,18 +9,33 @@ body {
 
 */
 
+img {
+  width: 20%; 
+  height:20%;
+}
+
 body {
+  width: 960px; 
+  margin: 0 auto;
+  position:relative;
+  left:20px;
+  top: 20px;
   font-family: "Verdana", Serif;
   /* background-color: #202020; */
   color: #222222;
-  background: white url("images/SQlogo.png") no-repeat right top;
-  background-size: 10%;
+  /*background: white url("images/SQlogo.png") no-repeat right 20px top;*/
+  /*background-size: 180px 60px;*/
   /* background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+Te0/49LX/r3h/wDRa0UUUAf/2Q==); */
+}
+
+div.contents {
+  position:relative;
+  left:20px;
 }
 
 h1 {
   color: #111111;
-  width: 50%;
+  width: 60%;
   border-bottom: 2px solid black;
   margin-bottom: 5px;
 }
