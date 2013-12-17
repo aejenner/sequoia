@@ -5,7 +5,7 @@
 {% with  c1=c2.category %}
 
 <h1>{{ c2.name }}</h1>
-<h2><a href="{% url 'squser:c1_list' %}">Category</a></h2>
+<h2><a href="{% url 'squser:c1_list' %}">Packet</a></h2>
 <h2><a href="{% url 'squser:c2_list' c1.id %}">{{ c1.name }}</a></h2>
 <h2><a href="{% url 'squser:c3_list' c1.id c2.id %}">{{ c2.name }}</a></h2>
 

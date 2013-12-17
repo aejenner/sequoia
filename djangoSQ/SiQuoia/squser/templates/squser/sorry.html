@@ -1,0 +1,14 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
+<h1>You dont have enough SQ...</h1>
+
+<ul>
+	<li>Prices: 20 SQ</li>
+	<li>You have: {{sq}} SQ</li>
+	<li><a href="{% url 'squser:sq_buy_sq' %}">Get SQ!</a></li>
+</ul>
+
+
+{% endblock %}

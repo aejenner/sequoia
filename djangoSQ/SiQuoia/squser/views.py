@@ -16,6 +16,12 @@ def sq_start(request):
 	return render(request, 'squser/sq_start.html');
 
 def pk_confirm(request, c1_pk=-1, c2_pk=-1, c3_pk=-1):
+	user = request.user
+	userInfo = SQUserInfo.objects.get(user=user)
+
+	if userInfo.sq_points < 20:
+		return render(request, 'squser/sorry.html', {'sq':userInfo.sq_points});
+
 	if c1_pk == -1:
 		cName = 'All'
 		cType = 'all'
@@ -36,7 +42,8 @@ def pk_confirm(request, c1_pk=-1, c2_pk=-1, c3_pk=-1):
 		cType = 'c3'
 		pk = c.pk
 	
-	return render(request, 'squser/pk_confirm.html', {'cName' : cName, 'cType':cType, 'pk':pk});
+
+	return render(request, 'squser/pk_confirm.html', {'cName' : cName, 'cType':cType, 'pk':pk ,'sq':userInfo.sq_points});
 
 def pk_get(request):
 	cType = request.POST['cType']
@@ -55,6 +62,10 @@ def pk_get(request):
 	userInfo = SQUserInfo.objects.get(user=user)
 	userInfo.packet = p
 	userInfo.trial = t
+	userInfo.save()
+
+	sq = userInfo.sq_points - 20
+	userInfo.sq_points = sq
 	userInfo.save()
 
 	return render(request, 'squser/pk_success.html');
@@ -147,7 +158,11 @@ def done(request):
 	user = request.user
 	userInfo = SQUserInfo.objects.get(user=user)
 	t = userInfo.trial
-	return render(request, 'squser/done.html', {'t':t});
+	score = 0
+	for trial in t.trial.all():
+		if trial.correct:
+			score = score + 1
+	return render(request, 'squser/done.html', {'t':t, 'score':score});
 
 
 class PkC1(generic.ListView):
@@ -166,3 +181,29 @@ class PkC3(generic.DetailView):
 	model = Category2
 	template_name = 'squser/c3_list.html'
 	context_object_name = 'c2'
+
+
+def sq_buy_sq(request):
+	user = request.user
+	userInfo = SQUserInfo.objects.get(user=user)
+
+	return render(request, 'squser/sq_buy_sq.html', {'sq':userInfo.sq_points});
+
+def buysq(request):
+	price = request.POST['total']
+	if is_number(price):
+		user = request.user
+		userInfo = SQUserInfo.objects.get(user=user)
+		sq = int(price) + userInfo.sq_points
+		userInfo.sq_points = sq
+		userInfo.save()
+		return render(request, 'squser/thankyou.html');
+	else:
+		return render(request, 'squser/sq_buy_sq.html', {'error':"Please enter a number without decimal places."});
+
+def is_number(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False

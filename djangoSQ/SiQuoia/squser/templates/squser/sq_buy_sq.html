@@ -1,0 +1,32 @@
+{% extends "siquoia/base.html" %}
+
+{% block content %}
+
+<h1>Register</h1>
+
+{% if error %}<p><strong>{{error}}</p></strong>{% endif %}
+
+<form method="POST" action={% url 'squser:buysq' %}>
+	{% csrf_token %}
+	<label for="total">Purchasing SQ:</label>
+	<input id="total" name="total" type="number" />
+	<br />
+
+	<label for="name">Name On Card:</label>
+	<input id="name" name="name" type="text" />
+	<br />
+
+	<label for="address">Street Address:</label>
+	<input id="address" name="address" type="text" />
+	<br />
+
+	<label for="address">Card Number:</label>
+	<input id="number" name="number" type="number" />
+	<br />
+<br />
+<input type="submit" value="Buy SQ!" />
+</form>
+
+<ul><li>Total SQ as of now: {{sq}}</li></ul>
+
+{% endblock %}

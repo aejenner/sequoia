@@ -91,8 +91,8 @@ input[type="text"], input[type="password"]{
 table {
   border-collapse: collapse;
   border-spacing: 5px;
-  background-color: #202020;
-  color: #A0A0A0;
+  background-color: #EEFFEE;
+  color: #333333;
   width: 50%;
 }
 
@@ -102,12 +102,12 @@ th {
 }
 
 td, th {
-  border: 3px double #333333;
+  border: 3px double #666666;
   border-radius: 5px;
 }
 
 td {
-  text-align: right;
+  text-align: center;
 }
 
 label {

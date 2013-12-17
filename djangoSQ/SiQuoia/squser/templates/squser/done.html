@@ -4,19 +4,28 @@
 
 <h1>Done!</h1>
 
-<table border='1'>
+<ul>
+<li><a href="{% url 'squser:c1_list' %}">Buy New Packet</a></li>
+</ul>
+
+<table>
 	<tr>
 		<th>Question</th>
 		<th>Marked Correct</th>
 
+
 	</tr>
-	{% for tryal in t.objects %}
+	{% for trial in t.trial.all %}
 	<tr>
 		<td>{{ trial.question.text }}</td>
 		<td>{{ trial.correct }}</td>
 	</tr>
-	{% endfor %}
-</table>
 
+	{% endfor %}
+	<tr>
+		<td> Total Score</td>
+		<td> {{score}}</td>
+	</tr>
+</table>
 
 {% endblock %}

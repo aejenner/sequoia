@@ -25,5 +25,11 @@ urlpatterns = patterns('',
 	url(r'^next$', login_required(views.next), name='next'),
 
 	url(r'^done$', login_required(views.done), name='done'),
+
+
+	url(r'^buy$', login_required(views.sq_buy_sq), name='sq_buy_sq'),
+
+	url(r'^buysq$', login_required(views.buysq), name='buysq'),
+
 	#url(r'^success$', login_required(views.pk_success), name='pk_success'),
 )
